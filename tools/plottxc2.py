@@ -83,10 +83,12 @@ class PlotTXC2(Plot):
         self.data.select('x')
         k,v = list(self.data.cmds.items())[0]
         self.data.set_value(k, '%g' % x1)
-        self.data.do_cmds(self.qo, read=False)
+        for obj in self.data.iter_cmds2(False):
+            self.qo.put(obj)
         self.qo.put('sleep 3')
         self.data.set_value(k, '%g' % xprev)
-        self.data.do_cmds(self.qo, read=False)
+        for obj in self.data.iter_cmds2(False):
+            self.qo.put(obj)
         self.x = xprev
         self.root.after_idle(lambda: self.io.start(do_cb1=False))
 
@@ -119,9 +121,11 @@ class PlotTXC2(Plot):
                 k,v = list(self.data.cmds.items())[0]
                 self.data.set_value(k, '%g' % x)
                 #print(self.data.get_value(k))
-                self.data.do_cmds(self.qo, read=False)
+                for obj in self.data.iter_cmds2(False):
+                    self.qo.put(obj)
                 self.data.select('y')
-                self.data.do_cmds(self.qo, read=True)
+                for obj in self.data.iter_cmds2(False):
+                    self.qo.put(obj)
                 self.root.after_idle(lambda: self.io.start(do_cb1=False))
                 self.x = x
 
