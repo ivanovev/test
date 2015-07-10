@@ -1,2 +1,2 @@
 
-from . import TEST, TXC2
+from . import TGMA, TEST, TXC2
