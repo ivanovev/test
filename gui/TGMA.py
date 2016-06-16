@@ -1,7 +1,7 @@
 
 from collections import OrderedDict as OD
-from util import Data, get_columns, control_cb, dev_io_cb
 from util.columns import *
+from util import Data, get_columns, control_cb, dev_io_cb
 
 def columns():
     return get_columns([c_serial])

@@ -1,8 +1,8 @@
 
 from collections import OrderedDict as OD
+from util.columns import *
 from util import Data, process_cb, control_cb, monitor_cb, dev_io_cb
 from ..tools.plottxc2 import PlotTXC2
-from util.columns import *
 
 def startup_cb(apps, mode, dev):
     if mode == 'ch1up':

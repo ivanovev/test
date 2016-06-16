@@ -3,7 +3,6 @@ from util.plot import Plot, PlotData, get_cmdsx
 import tkinter as tk
 import tkinter.ttk as ttk
 from util.columns import *
-import pdb
 
 class PlotTXC2(Plot):
     def __init__(self, dev, odpch='1', sign=True):
